@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Mushawa Scientific Consultancy | Saudi Arabia</title>
+<link as="image" href="assets/images/01_hero_main.jpg" rel="preload"/>
+<style>
+:root{
+  --ink:#15243b;
+  --ink2:#243651;
+  --paper:#ffffff;
+  --soft:#f5f7fb;
+  --soft2:#eef3f8;
+  --line:#dfe5ec;
+  --purple:#6154d9;
+  --violet:#7a62e8;
+  --cyan:#2cc7d6;
+  --aqua:#9ee7e7;
+  --lime:#cbf263;
+  --orange:#ff9b55;
+  --muted:#627083;
+  --shadow:0 24px 60px rgba(29,47,78,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.55;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1220px,92%);margin:auto}
+
+/* utility */
+.eyebrow{
+  font-size:12px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  font-weight:800;
+  color:var(--purple);
+}
+h1,h2,h3,h4{margin-top:0}
+h1{font-size:clamp(48px,6vw,78px);line-height:1.01;letter-spacing:-2.5px}
+h2{font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-1.4px}
+h3{font-size:23px;line-height:1.2}
+p{color:var(--muted)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:8px;
+  border:1px solid transparent;
+  font-weight:800;
+  font-size:14px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-purple{background:var(--purple);color:#fff}
+.btn-ghost{border-color:#ccd5df;background:#fff;color:var(--ink)}
+.btn-light{background:#fff;color:var(--ink)}
+.arrow:after{content:" →";font-weight:900}
+
+/* announcement */
+.notice{
+  background:linear-gradient(90deg,var(--purple),#7667e1 55%,var(--cyan));
+  color:#fff;
+  font-size:13px;
+}
+.notice .container{
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  text-align:center;
+}
+.notice strong{font-weight:900}
+
+/* nav */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.navbar{
+  min-height:82px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:26px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo{
+  width:48px;height:48px;
+  border-radius:13px;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  display:grid;place-items:center;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:-1px;
+  box-shadow:0 10px 30px rgba(97,84,217,.28);
+}
+.brand-title{font-weight:900;font-size:16px;line-height:1.1}
+.brand-sub{font-size:10px;color:var(--muted);letter-spacing:.8px;margin-top:4px}
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:2px;
+  list-style:none;
+  padding:0;margin:0;
+}
+.navitem{position:relative}
+.navitem>a{
+  display:flex;align-items:center;gap:4px;
+  min-height:82px;
+  padding:0 10px;
+  font-size:13px;
+  font-weight:800;
+  color:#293a52;
+}
+.navitem>a:hover{color:var(--purple)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+
+/* mega menu */
+.mega{
+  display:none;
+  position:absolute;
+  left:-180px;
+  top:74px;
+  width:820px;
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+}
+.navitem:hover .mega{display:grid}
+.mega.cols3{grid-template-columns:1.1fr 1fr 1fr;gap:20px}
+.mega.cols2{grid-template-columns:1fr 1fr;gap:20px;width:620px;left:-120px}
+.mega h4{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px}
+.mega a{
+  display:block;
+  padding:8px 9px;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:700;
+}
+.mega a:hover{background:var(--soft);color:var(--purple)}
+.mega-feature{
+  min-height:170px;
+  border-radius:12px;
+  padding:18px;
+  background:linear-gradient(145deg,#192842,#324b72);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.mega-feature:after{
+  content:"";
+  position:absolute;width:150px;height:150px;border-radius:50%;
+  background:rgba(44,199,214,.27);right:-40px;bottom:-65px;
+}
+.mega-feature p{color:#d7e1f0;font-size:12px}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+
+/* hero */
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height:700px;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 83% 15%, rgba(44,199,214,.17), transparent 26%),
+    radial-gradient(circle at 90% 80%, rgba(97,84,217,.13), transparent 30%),
+    linear-gradient(180deg,#fff,#f8faff);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+  gap:45px;
+  align-items:center;
+  padding:74px 0 84px;
+}
+.hero-copy{position:relative;z-index:2}
+.hero-copy h1{margin:14px 0 20px}
+.hero-copy h1 span{
+  background:linear-gradient(90deg,var(--purple),var(--cyan));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero-copy p{font-size:19px;max-width:680px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px}
+.hero-meta div{font-size:12px;color:var(--muted)}
+.hero-meta b{display:block;color:var(--ink);font-size:16px}
+
+/* scientific visual */
+.science-visual{
+  position:relative;
+  min-height:520px;
+}
+.visual-bg{
+  position:absolute;inset:5% 0 0 5%;
+  border-radius:42px 42px 80px 22px;
+  background:linear-gradient(145deg,#191f42 0%,#2b2c62 48%,#1d6c79 100%);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.visual-bg:before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 68% 28%,rgba(203,242,99,.55) 0 4px,transparent 5px),
+    radial-gradient(circle at 61% 37%,rgba(44,199,214,.9) 0 6px,transparent 7px),
+    radial-gradient(circle at 77% 40%,rgba(255,155,85,.85) 0 5px,transparent 6px),
+    radial-gradient(circle at 48% 56%,rgba(255,255,255,.7) 0 4px,transparent 5px),
+    radial-gradient(circle at 70% 67%,rgba(203,242,99,.8) 0 6px,transparent 7px);
+}
+.orbit{
+  position:absolute;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  transform:rotate(-18deg);
+}
+.orbit.o1{width:300px;height:160px;right:38px;top:82px}
+.orbit.o2{width:210px;height:330px;right:85px;top:70px;transform:rotate(30deg)}
+.orbit.o3{width:360px;height:250px;right:12px;top:115px;transform:rotate(6deg)}
+.lab-card{
+  position:absolute;
+  width:250px;
+  background:rgba(255,255,255,.94);
+  border:1px solid #d9e1ea;
+  border-radius:14px;
+  box-shadow:0 16px 36px rgba(10,27,49,.18);
+  padding:15px;
+}
+.lab-card.c1{left:-2px;top:68px}
+.lab-card.c2{right:-10px;bottom:24px;width:235px}
+.lab-card .mini-title{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.lab-card h4{margin:5px 0 11px;font-size:16px}
+.chart{
+  height:78px;
+  display:flex;align-items:flex-end;gap:7px;
+}
+.bar{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(var(--cyan),var(--purple))}
+.bar:nth-child(1){height:35%}.bar:nth-child(2){height:55%}.bar:nth-child(3){height:43%}.bar:nth-child(4){height:78%}.bar:nth-child(5){height:62%}.bar:nth-child(6){height:90%}
+.molecule-row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.dot{width:19px;height:19px;border-radius:50%;background:var(--purple)}
+.dot:nth-child(2),.dot:nth-child(5){background:var(--cyan)}
+.dot:nth-child(3){background:var(--orange)}
+.line{width:28px;height:2px;background:#aab7c5}
+
+/* prompt bar */
+.science-prompt{
+  background:#131f35;
+  color:#fff;
+  padding:24px 0;
+}
+.prompt-grid{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:22px;
+}
+.prompt-title{font-weight:900;font-size:16px}
+.prompt-links{display:flex;gap:12px;flex-wrap:wrap}
+.prompt-links a{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:12px;
+}
+.prompt-links a:hover{background:rgba(255,255,255,.14)}
+
+/* trust */
+.trust{padding:38px 0;border-bottom:1px solid var(--line)}
+.trust-inner{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+.trust strong{font-size:13px}
+.fake-logos{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:16px;
+}
+.fake-logo{
+  min-height:48px;
+  display:grid;place-items:center;
+  color:#8b97a8;
+  font-weight:900;
+  font-size:13px;
+  border:1px dashed #d7dde5;
+  border-radius:8px;
+  background:#fbfcfe;
+}
+
+/* sections */
+section{padding:86px 0}
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:30px;
+  margin-bottom:34px;
+}
+.section-head .copy{max-width:780px}
+.section-head h2{margin:9px 0 0}
+.section-head p{max-width:650px}
+
+/* division cards */
+.division-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.div-card{
+  position:relative;
+  min-height:270px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:22px;
+  overflow:hidden;
+  transition:.22s ease;
+}
+.div-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c7c0fb}
+.div-card .num{font-size:11px;font-weight:900;color:var(--purple);letter-spacing:1px}
+.div-card h3{margin:12px 0 9px}
+.div-card p{font-size:13px}
+.div-card .link{
+  position:absolute;left:22px;bottom:18px;
+  font-size:12px;font-weight:900;color:var(--purple)
+}
+.div-card:after{
+  content:"";
+  position:absolute;
+  width:110px;height:110px;border-radius:50%;
+  right:-55px;bottom:-55px;
+  background:rgba(97,84,217,.09)
+}
+.div-card:nth-child(3n):after{background:rgba(44,199,214,.12)}
+.div-card:nth-child(4n):after{background:rgba(203,242,99,.18)}
+
+/* platform band */
+.platform{
+  background:linear-gradient(125deg,#17223a,#2f3668 60%,#176a75);
+  color:#fff;
+  overflow:hidden;
+}
+.platform .section-head h2,.platform .section-head p{color:#fff}
+.platform .section-head p{opacity:.78}
+.platform-grid{
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:36px;
+  align-items:center;
+}
+.toolkit{
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+  padding:22px;
+}
+.toolkit-nav{display:grid;gap:9px}
+.toolkit-item{
+  display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;
+  padding:11px 12px;border-radius:10px;background:rgba(255,255,255,.05)
+}
+.toolkit-item:hover{background:rgba(255,255,255,.10)}
+.toolkit-icon{
+  width:34px;height:34px;border-radius:9px;
+  display:grid;place-items:center;background:rgba(158,231,231,.16);color:var(--aqua);font-weight:900
+}
+.toolkit-item b{font-size:13px}
+.toolkit-item span{font-size:11px;color:#bfccda}
+.workflow-map{
+  position:relative;
+  min-height:460px;
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(44,199,214,.18),transparent 40%),
+    rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.14);
+  overflow:hidden;
+}
+.center-node{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:170px;height:170px;border-radius:50%;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  display:grid;place-items:center;text-align:center;padding:20px;
+  box-shadow:0 20px 55px rgba(44,199,214,.22);
+}
+.center-node strong{font-size:19px}
+.node{
+  position:absolute;
+  min-width:145px;
+  padding:12px 14px;border-radius:12px;
+  background:#fff;color:var(--ink);box-shadow:0 12px 28px rgba(0,0,0,.20);
+}
+.node b{display:block;font-size:12px}.node span{font-size:10px;color:var(--muted)}
+.n1{left:7%;top:14%}.n2{right:6%;top:12%}.n3{left:4%;bottom:16%}.n4{right:4%;bottom:17%}.n5{left:38%;top:6%}.n6{left:39%;bottom:5%}
+.connector{
+  position:absolute;height:1px;background:rgba(255,255,255,.25);transform-origin:left center
+}
+.c1{width:180px;left:22%;top:29%;transform:rotate(26deg)}
+.c2{width:170px;left:59%;top:30%;transform:rotate(-25deg)}
+.c3{width:180px;left:22%;top:68%;transform:rotate(-24deg)}
+.c4{width:170px;left:59%;top:66%;transform:rotate(23deg)}
+
+/* solutions */
+.solutions{background:var(--soft)}
+.solution-tabs{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px
+}
+.tab{
+  border:1px solid #ced7e1;
+  border-radius:999px;
+  background:#fff;
+  padding:9px 13px;
+  font-size:12px;font-weight:800;cursor:pointer
+}
+.tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.solution-panel{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  min-height:390px;
+}
+.solution-copy{padding:36px}
+.solution-copy h3{font-size:32px}
+.solution-visual{
+  position:relative;
+  background:linear-gradient(145deg,#e8f6f8,#e8e8fb);
+  min-height:390px;overflow:hidden
+}
+.solution-visual:before{
+  content:"";
+  position:absolute;width:260px;height:260px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(97,84,217,.28),rgba(44,199,214,.25));
+  right:60px;top:60px
+}
+.solution-visual:after{
+  content:"";
+  position:absolute;width:180px;height:180px;border-radius:34px;
+  background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);
+  left:65px;bottom:50px;transform:rotate(17deg);
+  box-shadow:0 20px 55px rgba(40,66,100,.12)
+}
+.science-dots{
+  position:absolute;right:115px;top:118px;width:150px;height:150px;z-index:3
+}
+.science-dots i{position:absolute;width:18px;height:18px;border-radius:50%;background:var(--purple)}
+.science-dots i:nth-child(2){left:55px;top:15px;background:var(--cyan)}
+.science-dots i:nth-child(3){left:100px;top:58px;background:var(--orange)}
+.science-dots i:nth-child(4){left:53px;top:108px;background:var(--lime)}
+.science-dots i:nth-child(5){left:8px;top:70px;background:var(--purple)}
+
+/* proof & case studies */
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.proof{
+  padding:26px;border-top:3px solid var(--purple);background:#fff;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+.proof:nth-child(2){border-top-color:var(--cyan)}
+.proof:nth-child(3){border-top-color:var(--lime)}
+.proof:nth-child(4){border-top-color:var(--orange)}
+.proof h3{font-size:18px}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff
+}
+.case-visual{
+  min-height:180px;background:linear-gradient(145deg,#27355c,#6456d7);
+  position:relative;overflow:hidden
+}
+.case:nth-child(2) .case-visual{background:linear-gradient(145deg,#165c68,#2cc7d6)}
+.case:nth-child(3) .case-visual{background:linear-gradient(145deg,#404d2b,#a1c842)}
+.case-visual:after{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:rgba(255,255,255,.15);right:-40px;top:25px
+}
+.case-copy{padding:22px}
+.case-tag{font-size:10px;color:var(--purple);font-weight:900;text-transform:uppercase;letter-spacing:1px}
+.case h3{margin:8px 0}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.why-card{
+  display:grid;grid-template-columns:160px 1fr;gap:20px;
+  padding:22px;border:1px solid var(--line);border-radius:14px;background:#fff
+}
+.why-art{
+  min-height:145px;border-radius:12px;background:linear-gradient(135deg,#e9e7fb,#cceef1);position:relative;overflow:hidden
+}
+.why-art:before{content:"";position:absolute;width:105px;height:105px;border-radius:50%;background:rgba(97,84,217,.33);left:25px;top:20px}
+.why-art:after{content:"";position:absolute;width:65px;height:65px;border-radius:14px;background:rgba(255,255,255,.72);right:18px;bottom:16px;transform:rotate(15deg)}
+
+/* cta */
+.final-cta{
+  background:#17233b;
+  color:#fff;
+}
+.final-cta h2{color:#fff}
+.final-cta p{color:#c7d1de}
+.cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cta-card{
+  min-height:235px;border-radius:14px;padding:24px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14)
+}
+.cta-card h3{font-size:24px}
+.cta-card p{font-size:13px}
+.cta-card .btn{margin-top:10px}
+
+/* footer */
+footer{background:#0d1728;color:#aeb9c8;padding:54px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:28px}
+footer h4{color:#fff;font-size:14px}
+footer a{display:block;padding:5px 0;font-size:12px}
+footer a:hover{color:#fff}
+.footer-brand p{font-size:12px}
+.footer-bottom{
+  border-top:1px solid #263348;margin-top:34px;padding-top:17px;
+  display:flex;justify-content:space-between;gap:20px;font-size:11px
+}
+
+/* responsive */
+@media(max-width:1100px){
+  .navlinks{display:none}
+  .menu-btn{display:block}
+  .navbar{grid-template-columns:auto 1fr auto}
+  #mainNav.mobile{
+    display:block;position:absolute;left:0;right:0;top:82px;background:#fff;border-top:1px solid var(--line);padding:12px 4%;
+  }
+  #mainNav.mobile .navlinks{display:block}
+  #mainNav.mobile .navitem>a{min-height:auto;padding:12px 8px}
+  #mainNav.mobile .mega{position:static;width:100%;box-shadow:none;left:auto;top:auto}
+  .hero-grid,.platform-grid,.solution-panel{grid-template-columns:1fr}
+  .science-visual{min-height:460px}
+  .division-grid{grid-template-columns:repeat(3,1fr)}
+  .proof-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1.3fr 1fr 1fr}
+}
+@media(max-width:760px){
+  h1{font-size:44px}
+  .hero-grid{padding-top:50px}
+  .science-visual{min-height:400px}
+  .lab-card.c2{right:0}
+  .prompt-grid,.trust-inner{grid-template-columns:1fr}
+  .fake-logos{grid-template-columns:repeat(2,1fr)}
+  .section-head{display:block}
+  .section-head .btn{margin-top:16px}
+  .division-grid,.case-grid,.why-grid,.cta-grid{grid-template-columns:1fr}
+  .workflow-map{min-height:560px}
+  .node{min-width:125px}
+  .n5{left:30%}.n6{left:29%}
+  .why-card{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .brand-sub{display:none}
+  .notice{display:none}
+  .navbar{min-height:72px}
+  .nav-actions .btn-ghost{display:none}
+  .hero{min-height:auto}
+  .science-visual{min-height:350px}
+  .visual-bg{inset:0}
+  .lab-card{width:205px}
+  .lab-card.c1{left:6px;top:40px}
+  .lab-card.c2{right:6px;bottom:18px;width:200px}
+  .division-grid,.proof-grid,.footer-grid{grid-template-columns:1fr}
+  .workflow-map{min-height:650px}
+  .n1{left:6%;top:8%}.n2{right:6%;top:8%}.n3{left:6%;bottom:9%}.n4{right:6%;bottom:9%}.n5{left:28%;top:26%}.n6{left:27%;bottom:26%}
+  .center-node{width:145px;height:145px}
+  .connector{display:none}
+}
+
+/* --- Real-world scientific photography integration (content/layout preserved) --- */
+.visual-bg{
+  background:
+    linear-gradient(90deg,rgba(15,29,51,.18),rgba(15,29,51,.04)),
+    url('assets/images/01_hero_main.jpg') center/cover no-repeat !important;
+}
+.visual-bg:before{background:linear-gradient(180deg,rgba(14,28,48,.02),rgba(14,28,48,.12)) !important}
+.orbit{display:none}
+.science-visual{border-radius:42px 42px 80px 22px}
+.div-card.has-photo{padding-top:176px}
+.div-card .service-photo{
+  position:absolute;
+  left:0;right:0;top:0;
+  width:100%;height:154px;
+  object-fit:cover;
+  border-radius:14px 14px 0 0;
+  border-bottom:1px solid var(--line);
+  transition:transform .35s ease;
+}
+.div-card.has-photo:hover .service-photo{transform:scale(1.025)}
+.div-card.has-photo .num{
+  position:absolute;top:12px;left:12px;z-index:2;
+  color:#fff;background:rgba(21,36,59,.78);
+  padding:5px 8px;border-radius:999px;
+  backdrop-filter:blur(6px);
+}
+.div-card.has-photo:after{z-index:0}
+.div-card.has-photo h3,.div-card.has-photo p,.div-card.has-photo .link{position:relative;z-index:1}
+.mega-feature{
+  background:
+    linear-gradient(145deg,rgba(25,40,66,.86),rgba(50,75,114,.80)),
+    url('assets/images/02_hero_data.jpg') center/cover no-repeat !important;
+}
+.case:nth-child(1) .case-visual{
+  background:url('assets/images/03_research_development.jpg') center/cover no-repeat !important;
+}
+.case:nth-child(2) .case-visual{
+  background:url('assets/images/07_y_analytics.jpg') center/cover no-repeat !important;
+}
+.case:nth-child(3) .case-visual{
+  background:url('assets/images/05_rd_consultancy.jpg') center/cover no-repeat !important;
+}
+.case-visual:after{background:linear-gradient(180deg,transparent 58%,rgba(13,24,43,.25)) !important;inset:0;width:auto;height:auto;border-radius:0;right:0;top:0}
+.why-card:nth-child(1) .why-art{background:url('assets/images/04_project_management.jpg') center/cover no-repeat}
+.why-card:nth-child(2) .why-art{background:url('assets/images/06_laboratory_coordination.jpg') center/cover no-repeat}
+.why-card:nth-child(3) .why-art{background:url('assets/images/02_hero_data.jpg') center/cover no-repeat}
+.why-card:nth-child(4) .why-art{background:url('assets/images/01_hero_main.jpg') center/cover no-repeat}
+.why-art:before,.why-art:after{display:none}
+.solution-visual{
+  background:
+    linear-gradient(145deg,rgba(232,246,248,.10),rgba(232,232,251,.08)),
+    url('assets/images/05_rd_consultancy.jpg') center/cover no-repeat !important;
+}
+.solution-visual:before,.solution-visual:after,.science-dots{display:none}
+@media(max-width:760px){
+  .div-card.has-photo{padding-top:200px}
+  .div-card .service-photo{height:178px}
+}
+
+
+
+/* ==========================================================
+   FINAL PUBLISHING HEADER — NO OVERLAP / BILINGUAL / MOBILE
+   ========================================================== */
+:root{
+  --site-header-h:86px;
+  --header-max:1420px;
+}
+body{
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+header{
+  box-shadow:0 3px 16px rgba(21,36,59,.06);
+}
+.navbar.container{
+  width:min(var(--header-max),96%);
+  min-height:var(--site-header-h);
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:250px minmax(0,1fr) auto;
+  align-items:center;
+  gap:16px;
+}
+.brand{
+  width:250px;
+  min-width:0;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.brand-logo{
+  display:block;
+  width:248px;
+  height:auto;
+  max-width:100%;
+}
+.logo,.brand-title,.brand-sub{display:none!important}
+
+#mainNav{
+  min-width:0;
+  display:block;
+}
+.navlinks{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:nowrap;
+  gap:0;
+  white-space:nowrap;
+}
+.navitem{
+  position:relative;
+  flex:0 0 auto;
+}
+.navitem>a{
+  min-height:var(--site-header-h);
+  padding:0 9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  font-size:12.5px;
+  line-height:1;
+}
+.nav-actions{
+  justify-self:end;
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:8px;
+  white-space:nowrap;
+}
+.lang-switch{
+  display:inline-flex;
+  align-items:center;
+  flex:0 0 auto;
+  gap:5px;
+  min-height:40px;
+  padding:4px 8px;
+  border:1px solid #d8e0e8;
+  border-radius:9px;
+  background:#fff;
+}
+.lang-option{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-weight:800;
+  font-size:11px;
+  line-height:1;
+  padding:6px 7px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.lang-option.active{
+  color:#fff;
+  background:var(--purple);
+}
+.lang-divider{color:#c1c9d3;font-size:11px}
+.header-cta{
+  min-height:42px;
+  padding:0 13px;
+  font-size:12.5px;
+  white-space:nowrap;
+}
+.menu-btn{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  padding:0;
+  border:1px solid #d8e0e8;
+  border-radius:9px;
+  background:#fff;
+  color:var(--ink);
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* Keep desktop mega menus under the correct navigation item */
+.mega{top:78px}
+.mega.cols3{left:-120px}
+.mega.cols2{left:-90px}
+
+/* Footer logo */
+.footer-logo-plaque{
+  display:inline-flex;
+  padding:10px 12px;
+  border-radius:12px;
+  background:#fff;
+}
+.footer-brand-logo{
+  display:block;
+  width:270px;
+  height:auto;
+}
+
+/* Arabic RTL */
+html[dir="rtl"] body{
+  direction:rtl;
+  text-align:right;
+  font-family:Tahoma,Arial,"Segoe UI",sans-serif;
+}
+html[dir="rtl"] .navbar.container{
+  direction:rtl;
+}
+html[dir="rtl"] .brand{
+  justify-content:flex-start;
+}
+html[dir="rtl"] .nav-actions{
+  justify-self:start;
+  direction:rtl;
+}
+html[dir="rtl"] .lang-switch{direction:ltr}
+html[dir="rtl"] .mega{left:auto;right:-120px;text-align:right}
+html[dir="rtl"] .mega.cols2{left:auto;right:-90px}
+html[dir="rtl"] .mega h4,
+html[dir="rtl"] .mega a,
+html[dir="rtl"] .mega-feature,
+html[dir="rtl"] .hero-copy,
+html[dir="rtl"] .section-head .copy,
+html[dir="rtl"] .solution-copy,
+html[dir="rtl"] .case-copy,
+html[dir="rtl"] .cta-card,
+html[dir="rtl"] .proof,
+html[dir="rtl"] .footer-brand,
+html[dir="rtl"] footer{text-align:right}
+html[dir="rtl"] .hero-actions,
+html[dir="rtl"] .hero-meta,
+html[dir="rtl"] .prompt-links,
+html[dir="rtl"] .solution-tabs{justify-content:flex-start}
+html[dir="rtl"] .div-card .link{left:auto;right:22px}
+html[dir="rtl"] .div-card.has-photo .num{left:auto;right:12px}
+html[dir="rtl"] .arrow:after{content:" ←"}
+html[dir="rtl"] .workflow-map,
+html[dir="rtl"] .science-visual{direction:ltr}
+html[dir="rtl"] .toolkit-item{grid-template-columns:34px 1fr auto;text-align:right}
+html[dir="rtl"] .toolkit-item div:nth-child(2){direction:rtl}
+html[dir="rtl"] .node{text-align:right;direction:rtl}
+html[dir="rtl"] .footer-grid{text-align:right}
+html[dir="rtl"] .footer-bottom{direction:rtl}
+
+/* Compact desktop before switching to hamburger */
+@media(max-width:1330px){
+  .navbar.container{
+    grid-template-columns:220px minmax(0,1fr) auto;
+    gap:12px;
+  }
+  .brand{width:220px}
+  .brand-logo{width:218px}
+  .navitem>a{
+    padding:0 7px;
+    font-size:11.5px;
+  }
+  .header-cta{
+    padding:0 11px;
+    font-size:11.5px;
+  }
+  .lang-switch{padding:3px 6px}
+}
+
+/* Switch to a true mobile/tablet menu BEFORE any collision can occur */
+@media(max-width:1210px){
+  :root{--site-header-h:78px}
+  .navbar.container{
+    grid-template-columns:minmax(220px,1fr) auto;
+    gap:12px;
+  }
+  .brand{width:245px}
+  .brand-logo{width:242px}
+  .navlinks{display:none}
+  .menu-btn{display:inline-flex}
+  .nav-actions{gap:8px}
+  .nav-actions .btn-ghost{display:none}
+
+  #mainNav.mobile{
+    display:block;
+    position:absolute;
+    left:0;
+    right:0;
+    top:calc(var(--site-header-h) + 1px);
+    padding:10px 4% 18px;
+    background:#fff;
+    border-top:1px solid var(--line);
+    box-shadow:0 18px 42px rgba(20,35,58,.12);
+    z-index:150;
+  }
+  #mainNav.mobile .navlinks{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    white-space:normal;
+  }
+  #mainNav.mobile .navitem{
+    display:block;
+    width:100%;
+  }
+  #mainNav.mobile .navitem>a{
+    min-height:0;
+    padding:14px 4px;
+    justify-content:space-between;
+    border-bottom:1px solid #edf1f5;
+    font-size:14px;
+    white-space:normal;
+  }
+  #mainNav.mobile .mega,
+  #mainNav.mobile .mega.cols2,
+  #mainNav.mobile .mega.cols3{
+    display:grid;
+    position:static;
+    width:100%;
+    grid-template-columns:1fr;
+    gap:10px;
+    left:auto;
+    right:auto;
+    top:auto;
+    padding:8px 0 14px 14px;
+    border:0;
+    box-shadow:none;
+    background:transparent;
+  }
+  html[dir="rtl"] #mainNav.mobile .mega,
+  html[dir="rtl"] #mainNav.mobile .mega.cols2,
+  html[dir="rtl"] #mainNav.mobile .mega.cols3{
+    padding:8px 14px 14px 0;
+  }
+  #mainNav.mobile .mega-feature{min-height:auto}
+}
+
+/* Phones: logo + language + hamburger stay on ONE straight row */
+@media(max-width:720px){
+  :root{--site-header-h:72px}
+  .notice{display:none}
+  .navbar.container{
+    width:96%;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:8px;
+  }
+  .brand{
+    width:205px;
+    overflow:visible;
+  }
+  .brand-logo{width:202px}
+  .nav-actions{gap:6px}
+  .nav-actions .btn-purple{display:none}
+  .lang-switch{
+    min-height:38px;
+    padding:3px 5px;
+  }
+  .lang-option{
+    font-size:10px;
+    padding:5px;
+  }
+  .menu-btn{
+    width:38px;
+    height:38px;
+  }
+  #mainNav.mobile{top:calc(var(--site-header-h) + 1px)}
+}
+
+/* Small phones */
+@media(max-width:460px){
+  .brand{width:168px}
+  .brand-logo{width:166px}
+  .lang-switch{gap:2px}
+  .lang-option{padding:4px}
+  .lang-divider{display:none}
+}
+</style>
+<meta content="Dr. Mushawa Scientific Consultancy — bilingual English and Arabic scientific consultancy for research development, project management, analytics, publication and innovation in Saudi Arabia." name="description"/><meta content="#15243b" name="theme-color"/><link href="assets/images/favicon.png" rel="icon"/><link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon"/><link href="site.webmanifest" rel="manifest"/></head>
+<body>
+<div class="notice">
+<div class="container" data-i18n="t1">
+<strong>Saudi Scientific Consultancy Platform</strong>
+<span>Research development, project coordination, analytics, publication and innovation — in one connected model.</span>
+</div>
+</div>
+<header>
+<div class="container navbar">
+<a class="brand" href="#home"><img alt="Dr. Mushawa Scientific Consultancy" class="brand-logo" height="450" src="assets/images/dr-mushawa-logo.png" width="1340"/></a>
+<nav id="mainNav">
+<ul class="navlinks">
+<li class="navitem">
+<a data-i18n="t4" href="#divisions">Services ▾</a>
+<div class="mega cols3">
+<div>
+<h4 data-i18n="t5">Research &amp; Management</h4>
+<a data-i18n="t6" href="#divisions">Research Development</a>
+<a data-i18n="t7" href="#divisions">Research Project Management</a>
+<a data-i18n="t8" href="#divisions">R&amp;D Consultancy</a>
+<a data-i18n="t9" href="#divisions">Laboratory Coordination</a>
+</div>
+<div>
+<h4 data-i18n="t10">Data &amp; Informatics</h4>
+<a href="#divisions">Y-Analytics</a>
+<a data-i18n="t11" href="#divisions">Bioinformatics</a>
+<a data-i18n="t12" href="#divisions">Cheminformatics</a>
+<a data-i18n="t13" href="#divisions">Scientific Documentation</a>
+</div>
+<div>
+<div class="mega-feature">
+<h3 data-i18n="t14">12 integrated scientific divisions</h3>
+<p data-i18n="t15">From research concept to analysis, publication, product R&amp;D and innovation translation.</p>
+<a data-i18n="t16" href="#divisions" style="color:#fff;padding:0">Explore all services →</a>
+</div>
+</div>
+</div>
+</li>
+<li class="navitem">
+<a data-i18n="t17" href="#solutions">Solutions ▾</a>
+<div class="mega cols2">
+<div>
+<h4 data-i18n="t18">By scientific need</h4>
+<a data-i18n="t19" href="#solutions">Life Sciences &amp; Biotechnology</a>
+<a data-i18n="t20" href="#solutions">Food Science &amp; Nutrition</a>
+<a data-i18n="t21" href="#solutions">Microbiome &amp; Omics</a>
+<a data-i18n="t22" href="#solutions">Nutraceutical &amp; Product R&amp;D</a>
+</div>
+<div>
+<h4 data-i18n="t23">By outcome</h4>
+<a data-i18n="t24" href="#solutions">Research Proposal</a>
+<a data-i18n="t25" href="#solutions">Data &amp; Analytics</a>
+<a data-i18n="t26" href="#solutions">Publication</a>
+<a data-i18n="t27" href="#solutions">Innovation &amp; Commercialization</a>
+</div>
+</div>
+</li>
+<li class="navitem"><a data-i18n="t28" href="#platform">Platform</a></li>
+<li class="navitem"><a data-i18n="t29" href="#partners">Partners</a></li>
+<li class="navitem">
+<a data-i18n="t30" href="#resources">Resources ▾</a>
+<div class="mega cols2">
+<div>
+<h4 data-i18n="t31">Scientific resources</h4>
+<a data-i18n="t32" href="#resources">Research Insights</a>
+<a data-i18n="t33" href="#resources">Case Studies</a>
+<a data-i18n="t34" href="#resources">Methods &amp; SOPs</a>
+<a data-i18n="t35" href="#resources">Training</a>
+</div>
+<div>
+<h4 data-i18n="t36">Company</h4>
+<a data-i18n="t37" href="#why">Why Dr. Mushawa</a>
+<a data-i18n="t38" href="#contact">Contact</a>
+<a data-i18n="t39" href="#contact">Saudi Collaboration</a>
+</div>
+</div>
+</li>
+<li class="navitem"><a data-i18n="t40" href="#why">Company</a></li>
+</ul>
+</nav>
+<div class="nav-actions"><div aria-label="Language selection" class="lang-switch">
+<button aria-pressed="true" class="lang-option active" data-lang="en" type="button">EN</button>
+<span aria-hidden="true" class="lang-divider">|</span>
+<button aria-pressed="false" class="lang-option" data-lang="ar" type="button">العربية</button>
+</div>
+<a class="btn btn-ghost header-cta" data-i18n="t41" href="#contact">Contact</a>
+<a class="btn btn-purple header-cta" data-i18n="t42" href="#contact">Request Consultation</a>
+<button aria-expanded="false" aria-label="Open navigation menu" class="menu-btn" onclick="toggleNav()" type="button">☰</button>
+</div>
+</div>
+</header>
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="eyebrow" data-i18n="t43">Connected scientific consultancy</div>
+<h1 data-i18n="t44">Move from <span>research idea</span> to confident scientific decisions.</h1>
+<p data-i18n="t45">
+          Dr. Mushawa Scientific Consultancy connects scientific strategy, research project management, laboratory coordination, advanced analytics, publication and innovation into one Saudi-focused consultancy platform.
+        </p>
+<div class="hero-actions">
+<a class="btn btn-purple arrow" data-i18n="t46" href="#divisions">Explore services</a>
+<a class="btn btn-ghost" data-i18n="t47" href="#contact">Request a consultation</a>
+</div>
+<div class="hero-meta">
+<div data-i18n="t48"><b>12 Divisions</b>Integrated consultancy services</div>
+<div data-i18n="t49"><b>1 Connected Model</b>Idea → execution → analytics → impact</div>
+<div data-i18n="t50"><b>Asset-Light</b>Partner laboratories &amp; CRO network</div>
+</div>
+</div>
+<div class="science-visual">
+<div class="visual-bg">
+<div class="orbit o1"></div>
+<div class="orbit o2"></div>
+<div class="orbit o3"></div>
+</div>
+<div class="lab-card c1">
+<div class="mini-title">Y-Analytics</div>
+<h4 data-i18n="t51">Research Insight Dashboard</h4>
+<div class="chart">
+<div class="bar"></div><div class="bar"></div><div class="bar"></div>
+<div class="bar"></div><div class="bar"></div><div class="bar"></div>
+</div>
+</div>
+<div class="lab-card c2">
+<div class="mini-title" data-i18n="t52">Scientific Integration</div>
+<h4 data-i18n="t53">Omics + Chemistry + Evidence</h4>
+<div class="molecule-row">
+<span class="dot"></span><span class="line"></span><span class="dot"></span>
+<span class="line"></span><span class="dot"></span>
+</div>
+<div class="molecule-row" style="margin-top:8px">
+<span class="dot"></span><span class="line"></span><span class="dot"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="science-prompt">
+<div class="container prompt-grid">
+<div class="prompt-title" data-i18n="t54">What is your science?</div>
+<div class="prompt-links">
+<a data-i18n="t55" href="#solutions">Food &amp; Nutrition</a>
+<a data-i18n="t56" href="#solutions">Biotechnology</a>
+<a data-i18n="t57" href="#solutions">Microbiome &amp; Omics</a>
+<a data-i18n="t58" href="#solutions">Analytical Chemistry</a>
+<a data-i18n="t59" href="#solutions">Nutraceutical R&amp;D</a>
+<a data-i18n="t60" href="#solutions">Agrifood</a>
+</div>
+<a class="btn btn-light" data-i18n="t61" href="#contact">Talk to an expert</a>
+</div>
+</div>
+<div class="trust" id="partners">
+<div class="container trust-inner">
+<strong data-i18n="t62">Built for collaboration across</strong>
+<div class="fake-logos">
+<div class="fake-logo" data-i18n="t63">UNIVERSITIES</div>
+<div class="fake-logo" data-i18n="t64">CROs</div>
+<div class="fake-logo" data-i18n="t65">LABORATORIES</div>
+<div class="fake-logo" data-i18n="t66">HOSPITALS</div>
+<div class="fake-logo" data-i18n="t67">INDUSTRY</div>
+<div class="fake-logo" data-i18n="t68">R&amp;D TEAMS</div>
+</div>
+</div>
+</div>
+<section id="divisions">
+<div class="container">
+<div class="section-head">
+<div class="copy">
+<div class="eyebrow" data-i18n="t69">Scientific consultancy services</div>
+<h2 data-i18n="t70">12 connected divisions for end-to-end research support.</h2>
+<p data-i18n="t71">Each division can operate independently or as part of a complete research-development engagement.</p>
+</div>
+<a class="btn btn-ghost arrow" data-i18n="t72" href="#contact">Discuss your project</a>
+</div>
+<div class="division-grid">
+<article class="div-card has-photo"><img alt="Research Development scientific consultancy" class="service-photo" src="assets/images/03_research_development.jpg"/><div class="num">01</div><h3 data-i18n="t73">Research Development</h3><p data-i18n="t74">Scientific concepts, research questions, hypotheses, study design and research protocols.</p><a class="link" data-i18n="t75" href="#contact">Learn more →</a></article>
+<article class="div-card has-photo"><img alt="Research Project Management scientific consultancy" class="service-photo" src="assets/images/04_project_management.jpg"/><div class="num">02</div><h3 data-i18n="t76">Research Project Management</h3><p data-i18n="t77">Project planning, milestones, research coordination, documentation and collaborator management.</p><a class="link" data-i18n="t78" href="#contact">Learn more →</a></article>
+<article class="div-card has-photo"><img alt="R&amp;D Consultancy scientific consultancy" class="service-photo" src="assets/images/05_rd_consultancy.jpg"/><div class="num">03</div><h3 data-i18n="t79">R&amp;D Consultancy</h3><p data-i18n="t80">Life sciences, food science, nutrition, biotechnology, agrifood and related R&amp;D advisory.</p><a class="link" data-i18n="t81" href="#contact">Learn more →</a></article>
+<article class="div-card has-photo"><img alt="Laboratory Coordination scientific consultancy" class="service-photo" src="assets/images/06_laboratory_coordination.jpg"/><div class="num">04</div><h3 data-i18n="t82">Laboratory Coordination</h3><p data-i18n="t83">Selection and coordination of universities, CROs and analytical laboratories without operating a wet lab initially.</p><a class="link" data-i18n="t84" href="#contact">Learn more →</a></article>
+<article class="div-card has-photo"><img alt="Y-Analytics scientific consultancy" class="service-photo" src="assets/images/07_y_analytics.jpg"/><div class="num">05</div><h3>Y-Analytics</h3><p data-i18n="t85">Statistical analysis, visualization, scientific interpretation and research analytics.</p><a class="link" data-i18n="t86" href="#contact">Learn more →</a></article>
+<article class="div-card has-photo"><img alt="Bioinformatics scientific consultancy" class="service-photo" src="assets/images/08_bioinformatics.jpg"/><div class="num">06</div><h3 data-i18n="t87">Bioinformatics</h3><p data-i18n="t88">Genomics, microbiome, metabolomics and biological-data analysis where permitted.</p><a class="link" data-i18n="t89" href="#contact">Learn more →</a></article>
+<article class="div-card has-photo"><img alt="Cheminformatics scientific consultancy" class="service-photo" src="assets/images/09_cheminformatics.jpg"/><div class="num">07</div><h3 data-i18n="t90">Cheminformatics</h3><p data-i18n="t91">Molecular-property analysis, compound annotation, ADMET and computational scientific analysis.</p><a class="link" data-i18n="t92" href="#contact">Learn more →</a></article>
+<article class="div-card has-photo"><img alt="Scientific Documentation scientific consultancy" class="service-photo" src="assets/images/10_scientific_documentation.jpg"/><div class="num">08</div><h3 data-i18n="t93">Scientific Documentation</h3><p data-i18n="t94">Technical reports, research reports, SOPs, protocols and structured scientific documentation.</p><a class="link" data-i18n="t95" href="#contact">Learn more →</a></article>
+<article class="div-card"><div class="num">09</div><h3 data-i18n="t96">Publication Consultancy</h3><p data-i18n="t97">Manuscript development, journal selection, editing, submission coordination and revision support.</p><a class="link" data-i18n="t98" href="#contact">Learn more →</a></article>
+<article class="div-card"><div class="num">10</div><h3 data-i18n="t99">Scientific Communication</h3><p data-i18n="t100">Graphical abstracts, scientific figures, posters, presentations and technical communication.</p><a class="link" data-i18n="t101" href="#contact">Learn more →</a></article>
+<article class="div-card"><div class="num">11</div><h3 data-i18n="t102">Product R&amp;D Consultancy</h3><p data-i18n="t103">Functional foods, nutraceutical concepts, ingredient strategy and formulation-development planning.</p><a class="link" data-i18n="t104" href="#contact">Learn more →</a></article>
+<article class="div-card"><div class="num">12</div><h3 data-i18n="t105">Innovation Consultancy</h3><p data-i18n="t106">Technology assessment, research commercialization, scientific innovation and translation.</p><a class="link" data-i18n="t107" href="#contact">Learn more →</a></article>
+</div>
+</div>
+</section>
+<section class="platform" id="platform">
+<div class="container">
+<div class="section-head">
+<div class="copy">
+<div class="eyebrow" data-i18n="t108" style="color:var(--aqua)">Scientific collaboration platform</div>
+<h2 data-i18n="t109">From research question to a connected R&amp;D workflow.</h2>
+<p data-i18n="t110">Instead of treating consultancy, laboratory work, analytics and publication as isolated services, the model connects them through one coordinated scientific pipeline.</p>
+</div>
+</div>
+<div class="platform-grid">
+<div class="toolkit">
+<div class="toolkit-nav">
+<div class="toolkit-item"><div class="toolkit-icon">01</div><div data-i18n="t111"><b>Research Design</b><span>Concepts, protocols, hypotheses</span></div><b>→</b></div>
+<div class="toolkit-item"><div class="toolkit-icon">02</div><div data-i18n="t112"><b>Project Coordination</b><span>Milestones, CROs, collaborators</span></div><b>→</b></div>
+<div class="toolkit-item"><div class="toolkit-icon">03</div><div data-i18n="t113"><b>Laboratory Execution</b><span>Partner facilities and specialist testing</span></div><b>→</b></div>
+<div class="toolkit-item"><div class="toolkit-icon">04</div><div data-i18n="t114"><b>Y-Analytics</b><span>Statistics, integration, visualization</span></div><b>→</b></div>
+<div class="toolkit-item"><div class="toolkit-icon">05</div><div data-i18n="t115"><b>Publication</b><span>Manuscript, journal, revision</span></div><b>→</b></div>
+<div class="toolkit-item"><div class="toolkit-icon">06</div><div data-i18n="t116"><b>Translation</b><span>Products, IP, commercialization</span></div><b>→</b></div>
+</div>
+</div>
+<div class="workflow-map">
+<div class="connector c1"></div><div class="connector c2"></div><div class="connector c3"></div><div class="connector c4"></div>
+<div class="center-node" data-i18n="t117"><strong>Dr. Mushawa<br/>Scientific Consultancy</strong></div>
+<div class="node n1" data-i18n="t118"><b>Client / PI</b><span>Research challenge</span></div>
+<div class="node n2" data-i18n="t119"><b>University</b><span>Expertise + facilities</span></div>
+<div class="node n3" data-i18n="t120"><b>CRO / Lab</b><span>Specialist execution</span></div>
+<div class="node n4" data-i18n="t121"><b>Industry</b><span>Translation + products</span></div>
+<div class="node n5" data-i18n="t122"><b>Scientific Data</b><span>Analytics + evidence</span></div>
+<div class="node n6" data-i18n="t123"><b>Publication / IP</b><span>Scientific output</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="solutions" id="solutions">
+<div class="container">
+<div class="section-head">
+<div class="copy">
+<div class="eyebrow" data-i18n="t124">Solutions by scientific domain</div>
+<h2 data-i18n="t125">Bring the right expertise around each research challenge.</h2>
+<p data-i18n="t126">Choose a scientific domain, then combine only the consultancy divisions required for the project.</p>
+</div>
+</div>
+<div class="solution-tabs">
+<button class="tab active" data-i18n="t127" onclick="showSolution(0,this)">Food &amp; Nutrition</button>
+<button class="tab" data-i18n="t128" onclick="showSolution(1,this)">Microbiome &amp; Omics</button>
+<button class="tab" data-i18n="t129" onclick="showSolution(2,this)">Analytical Chemistry</button>
+<button class="tab" data-i18n="t130" onclick="showSolution(3,this)">Product R&amp;D</button>
+</div>
+<div class="solution-panel">
+<div class="solution-copy">
+<div class="eyebrow" data-i18n="t131" id="solEyebrow">Food science &amp; nutrition</div>
+<h3 data-i18n="t132" id="solTitle">Research from food composition to human nutrition outcomes.</h3>
+<p data-i18n="t133" id="solText">Support for food processing research, functional foods, dietary intervention, personalized nutrition, nutrition analytics, manuscript development and translational product concepts.</p>
+<a class="btn btn-purple arrow" data-i18n="t134" href="#contact">Discuss this solution</a>
+</div>
+<div class="solution-visual">
+<div class="science-dots"><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resources">
+<div class="container">
+<div class="section-head">
+<div class="copy">
+<div class="eyebrow" data-i18n="t135">Project examples</div>
+<h2 data-i18n="t136">Designed for researchers, institutions and R&amp;D teams.</h2>
+</div>
+</div>
+<div class="case-grid">
+<article class="case">
+<div class="case-visual"></div>
+<div class="case-copy"><div class="case-tag" data-i18n="t137">Research development</div><h3 data-i18n="t138">From concept to executable research protocol</h3><p data-i18n="t139">Structure the question, endpoints, methods, collaborators, milestones and scientific documentation before execution begins.</p><a class="arrow" data-i18n="t140" href="#contact"><b>Explore workflow</b></a></div>
+</article>
+<article class="case">
+<div class="case-visual"></div>
+<div class="case-copy"><div class="case-tag" data-i18n="t141">Data intelligence</div><h3 data-i18n="t142">Turn complex scientific datasets into decisions</h3><p data-i18n="t143">Integrate statistics, visualization, bioinformatics and scientific interpretation into one analysis workflow.</p><a class="arrow" data-i18n="t144" href="#contact"><b>Explore analytics</b></a></div>
+</article>
+<article class="case">
+<div class="case-visual"></div>
+<div class="case-copy"><div class="case-tag" data-i18n="t145">Research translation</div><h3 data-i18n="t146">Move from evidence to publication or product strategy</h3><p data-i18n="t147">Convert project outcomes into manuscripts, scientific communication, innovation plans and product-development pathways.</p><a class="arrow" data-i18n="t148" href="#contact"><b>Explore translation</b></a></div>
+</article>
+</div>
+</div>
+</section>
+<section class="solutions" id="why">
+<div class="container">
+<div class="section-head">
+<div class="copy">
+<div class="eyebrow" data-i18n="t149">Why Dr. Mushawa Scientific Consultancy?</div>
+<h2 data-i18n="t150">Scientific depth with a flexible partner-network model.</h2>
+</div>
+</div>
+<div class="why-grid">
+<div class="why-card">
+<div class="why-art"></div>
+<div><h3 data-i18n="t151">Built around research workflows</h3><p data-i18n="t152">Services are organized around how science actually moves: design, execution, analysis, interpretation, communication and translation.</p></div>
+</div>
+<div class="why-card">
+<div class="why-art"></div>
+<div><h3 data-i18n="t153">Asset-light and scalable</h3><p data-i18n="t154">Specialist experimental work can be assigned to appropriate universities, CROs and analytical laboratories instead of building every facility at launch.</p></div>
+</div>
+<div class="why-card">
+<div class="why-art"></div>
+<div><h3 data-i18n="t155">Multidisciplinary analytics</h3><p data-i18n="t156">Combine biostatistics, bioinformatics, cheminformatics, visualization and domain interpretation within the same research engagement.</p></div>
+</div>
+<div class="why-card">
+<div class="why-art"></div>
+<div><h3 data-i18n="t157">Saudi + international collaboration</h3><p data-i18n="t158">Build a local scientific consultancy hub while connecting clients to external expertise and specialized research execution when required.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section style="padding-top:55px">
+<div class="container">
+<div class="section-head">
+<div class="copy">
+<div class="eyebrow" data-i18n="t159">Consultancy proof framework</div>
+<h2 data-i18n="t160">What the model is designed to deliver.</h2>
+</div>
+</div>
+<div class="proof-grid">
+<div class="proof"><h3 data-i18n="t161">Structured research</h3><p data-i18n="t162">Clear questions, protocols, milestones, documentation and accountability.</p></div>
+<div class="proof"><h3 data-i18n="t163">Connected execution</h3><p data-i18n="t164">Coordinate clients, collaborators, laboratories, CROs and specialist experts.</p></div>
+<div class="proof"><h3 data-i18n="t165">Decision-ready data</h3><p data-i18n="t166">Move beyond raw data toward interpretable, visual and scientifically grounded results.</p></div>
+<div class="proof"><h3 data-i18n="t167">Translatable outputs</h3><p data-i18n="t168">Publications, technical reports, product concepts and innovation pathways.</p></div>
+</div>
+</div>
+</section>
+<section class="final-cta" id="contact">
+<div class="container">
+<div class="section-head">
+<div class="copy">
+<div class="eyebrow" data-i18n="t169" style="color:var(--aqua)">Ready for the next step?</div>
+<h2 data-i18n="t170">Start with the research challenge—not a fixed service package.</h2>
+<p data-i18n="t171">We can map the problem, identify the required divisions, define the external laboratory or CRO needs, and create a complete research-development pathway.</p>
+</div>
+</div>
+<div class="cta-grid">
+<div class="cta-card">
+<h3 data-i18n="t172">Discuss a project</h3>
+<p data-i18n="t173">For researchers or organizations with a defined research question, dataset or study.</p>
+<a class="btn btn-light" data-i18n="t174" href="mailto:contact@drmushawa-consultancy.com">Request consultation</a>
+</div>
+<div class="cta-card">
+<h3 data-i18n="t175">Build a collaboration</h3>
+<p data-i18n="t176">For universities, laboratories, CROs or scientific experts interested in becoming execution partners.</p>
+<a class="btn btn-light" data-i18n="t177" href="mailto:contact@drmushawa-consultancy.com">Partner with us</a>
+</div>
+<div class="cta-card">
+<h3 data-i18n="t178">Develop the Saudi company</h3>
+<p data-i18n="t179">For strategic discussion on activity scope, operating model, partner roles and initial pilot projects.</p>
+<a class="btn btn-light" data-i18n="t180" href="mailto:contact@drmushawa-consultancy.com">Saudi partnership</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="brand" style="color:#fff"><span class="footer-logo-plaque"><img alt="Dr. Mushawa Scientific Consultancy" class="footer-brand-logo" src="assets/images/dr-mushawa-logo.png"/></span></div>
+<p data-i18n="t183">Scientific consultancy for research development, project management, laboratory coordination, analytics, publication and innovation.</p>
+</div>
+<div><h4 data-i18n="t184">Services</h4><a data-i18n="t185" href="#divisions">Research Development</a><a data-i18n="t186" href="#divisions">Project Management</a><a href="#divisions">Y-Analytics</a><a data-i18n="t187" href="#divisions">Publication</a></div>
+<div><h4 data-i18n="t188">Advanced</h4><a data-i18n="t189" href="#divisions">Bioinformatics</a><a data-i18n="t190" href="#divisions">Cheminformatics</a><a data-i18n="t191" href="#divisions">Product R&amp;D</a><a data-i18n="t192" href="#divisions">Innovation</a></div>
+<div><h4 data-i18n="t193">Solutions</h4><a data-i18n="t194" href="#solutions">Food &amp; Nutrition</a><a data-i18n="t195" href="#solutions">Microbiome &amp; Omics</a><a data-i18n="t196" href="#solutions">Analytical Chemistry</a><a data-i18n="t197" href="#solutions">Nutraceutical R&amp;D</a></div>
+<div><h4 data-i18n="t198">Company</h4><a data-i18n="t199" href="#platform">Platform</a><a data-i18n="t200" href="#partners">Partners</a><a data-i18n="t201" href="#why">Why Us</a><a data-i18n="t202" href="#contact">Contact</a></div>
+</div>
+<div class="footer-bottom" data-i18n="t203">
+<span>© 2026 Dr. Mushawa Scientific Consultancy Company. Prototype website.</span>
+<span>Research • Analytics • Collaboration • Innovation</span>
+</div>
+</div>
+</footer>
+<script>
+function toggleNav(){
+  document.getElementById('mainNav').classList.toggle('mobile');
+}
+
+const solutionData = [
+  {
+    eyebrow:"Food science & nutrition",
+    title:"Research from food composition to human nutrition outcomes.",
+    text:"Support for food processing research, functional foods, dietary intervention, personalized nutrition, nutrition analytics, manuscript development and translational product concepts."
+  },
+  {
+    eyebrow:"Microbiome & omics",
+    title:"Connect biological datasets with interpretable research questions.",
+    text:"Support for microbiome, genomics and metabolomics projects including study design, data-analysis strategy, bioinformatics, integration, interpretation, visualization and publication."
+  },
+  {
+    eyebrow:"Analytical chemistry",
+    title:"Coordinate advanced analytical workflows from sample to interpretation.",
+    text:"Support for LC-MS, LC-QTOF, GC-MS, HPLC and related analytical projects through method planning, partner laboratory coordination, compound annotation, cheminformatics and scientific reporting."
+  },
+  {
+    eyebrow:"Product R&D",
+    title:"Translate evidence into structured product-development decisions.",
+    text:"Scientific advisory for functional foods, nutraceutical concepts, ingredient selection, formulation-development planning, validation strategy, scientific documentation and commercialization pathways."
+  }
+];
+
+function showSolution(i,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('solEyebrow').textContent = solutionData[i].eyebrow;
+  document.getElementById('solTitle').textContent = solutionData[i].title;
+  document.getElementById('solText').textContent = solutionData[i].text;
+}
+
+document.querySelectorAll('nav a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    if(window.innerWidth<1100){
+      document.getElementById('mainNav').classList.remove('mobile');
+    }
+  });
+});
+</script>
+<script>
+const DMS_TRANSLATIONS = {"t1": {"en": "\n<strong>Saudi Scientific Consultancy Platform</strong>\n<span>Research development, project coordination, analytics, publication and innovation — in one connected model.</span>\n", "ar": "\n<strong>منصة سعودية للاستشارات العلمية</strong>\n<span>تطوير الأبحاث، وتنسيق المشاريع، والتحليلات، والنشر، والابتكار — ضمن نموذج علمي مترابط واحد.</span>\n"}, "t2": {"en": "Dr. Mushawa Scientific Consultancy", "ar": "د. مشاوة للاستشارات العلمية"}, "t3": {"en": "SAUDI ARABIA • RESEARCH &amp; INNOVATION", "ar": "المملكة العربية السعودية • البحث والابتكار"}, "t4": {"en": "Services ▾", "ar": "الخدمات ▾"}, "t5": {"en": "Research &amp; Management", "ar": "البحث والإدارة"}, "t6": {"en": "Research Development", "ar": "تطوير الأبحاث"}, "t7": {"en": "Research Project Management", "ar": "إدارة المشاريع البحثية"}, "t8": {"en": "R&amp;D Consultancy", "ar": "استشارات البحث والتطوير"}, "t9": {"en": "Laboratory Coordination", "ar": "تنسيق المختبرات"}, "t10": {"en": "Data &amp; Informatics", "ar": "البيانات والمعلوماتية"}, "t11": {"en": "Bioinformatics", "ar": "المعلوماتية الحيوية"}, "t12": {"en": "Cheminformatics", "ar": "المعلوماتية الكيميائية"}, "t13": {"en": "Scientific Documentation", "ar": "التوثيق العلمي"}, "t14": {"en": "12 integrated scientific divisions", "ar": "12 قسماً علمياً متكاملاً"}, "t15": {"en": "From research concept to analysis, publication, product R&amp;D and innovation translation.", "ar": "من الفكرة البحثية إلى التحليل والنشر وتطوير المنتجات وتحويل الابتكار إلى قيمة تطبيقية."}, "t16": {"en": "Explore all services →", "ar": "استكشف جميع الخدمات ←"}, "t17": {"en": "Solutions ▾", "ar": "الحلول ▾"}, "t18": {"en": "By scientific need", "ar": "حسب الاحتياج العلمي"}, "t19": {"en": "Life Sciences &amp; Biotechnology", "ar": "علوم الحياة والتقنية الحيوية"}, "t20": {"en": "Food Science &amp; Nutrition", "ar": "علوم الأغذية والتغذية"}, "t21": {"en": "Microbiome &amp; Omics", "ar": "الميكروبيوم وعلوم الأوميكس"}, "t22": {"en": "Nutraceutical &amp; Product R&amp;D", "ar": "المكملات الغذائية وتطوير المنتجات"}, "t23": {"en": "By outcome", "ar": "حسب المخرجات"}, "t24": {"en": "Research Proposal", "ar": "المقترح البحثي"}, "t25": {"en": "Data &amp; Analytics", "ar": "البيانات والتحليلات"}, "t26": {"en": "Publication", "ar": "النشر العلمي"}, "t27": {"en": "Innovation &amp; Commercialization", "ar": "الابتكار والتسويق التجاري"}, "t28": {"en": "Platform", "ar": "المنصة"}, "t29": {"en": "Partners", "ar": "الشركاء"}, "t30": {"en": "Resources ▾", "ar": "الموارد ▾"}, "t31": {"en": "Scientific resources", "ar": "الموارد العلمية"}, "t32": {"en": "Research Insights", "ar": "رؤى بحثية"}, "t33": {"en": "Case Studies", "ar": "دراسات الحالة"}, "t34": {"en": "Methods &amp; SOPs", "ar": "المنهجيات وإجراءات التشغيل القياسية"}, "t35": {"en": "Training", "ar": "التدريب"}, "t36": {"en": "Company", "ar": "الشركة"}, "t37": {"en": "Why Dr. Mushawa", "ar": "لماذا د. مشاوة؟"}, "t38": {"en": "Contact", "ar": "تواصل معنا"}, "t39": {"en": "Saudi Collaboration", "ar": "التعاون السعودي"}, "t40": {"en": "Company", "ar": "الشركة"}, "t41": {"en": "Contact", "ar": "تواصل معنا"}, "t42": {"en": "Request Consultation", "ar": "اطلب استشارة"}, "t43": {"en": "Connected scientific consultancy", "ar": "استشارات علمية مترابطة"}, "t44": {"en": "Move from <span>research idea</span> to confident scientific decisions.", "ar": "انتقل من <span>الفكرة البحثية</span> إلى قرارات علمية موثوقة."}, "t45": {"en": "\n          Dr. Mushawa Scientific Consultancy connects scientific strategy, research project management, laboratory coordination, advanced analytics, publication and innovation into one Saudi-focused consultancy platform.\n        ", "ar": "\n          تجمع شركة د. مشاوة للاستشارات العلمية بين الاستراتيجية العلمية، وإدارة المشاريع البحثية، وتنسيق المختبرات، والتحليلات المتقدمة، والنشر، والابتكار ضمن منصة استشارية متكاملة تركز على السوق السعودي.\n        "}, "t46": {"en": "Explore services", "ar": "استكشف الخدمات"}, "t47": {"en": "Request a consultation", "ar": "اطلب استشارة"}, "t48": {"en": "<b>12 Divisions</b>Integrated consultancy services", "ar": "<b>12 قسماً</b>خدمات استشارية متكاملة"}, "t49": {"en": "<b>1 Connected Model</b>Idea → execution → analytics → impact", "ar": "<b>نموذج مترابط واحد</b>فكرة ← تنفيذ ← تحليلات ← أثر"}, "t50": {"en": "<b>Asset-Light</b>Partner laboratories &amp; CRO network", "ar": "<b>خفيف الأصول</b>شبكة مختبرات وشركات أبحاث تعاقدية شريكة"}, "t51": {"en": "Research Insight Dashboard", "ar": "لوحة رؤى البحث"}, "t52": {"en": "Scientific Integration", "ar": "التكامل العلمي"}, "t53": {"en": "Omics + Chemistry + Evidence", "ar": "الأوميكس + الكيمياء + الأدلة"}, "t54": {"en": "What is your science?", "ar": "ما هو مجال بحثك؟"}, "t55": {"en": "Food &amp; Nutrition", "ar": "الغذاء والتغذية"}, "t56": {"en": "Biotechnology", "ar": "التقنية الحيوية"}, "t57": {"en": "Microbiome &amp; Omics", "ar": "الميكروبيوم وعلوم الأوميكس"}, "t58": {"en": "Analytical Chemistry", "ar": "الكيمياء التحليلية"}, "t59": {"en": "Nutraceutical R&amp;D", "ar": "البحث والتطوير للمكملات الغذائية"}, "t60": {"en": "Agrifood", "ar": "النظم الزراعية والغذائية"}, "t61": {"en": "Talk to an expert", "ar": "تحدث مع خبير"}, "t62": {"en": "Built for collaboration across", "ar": "مصممة للتعاون مع"}, "t63": {"en": "UNIVERSITIES", "ar": "الجامعات"}, "t64": {"en": "CROs", "ar": "شركات الأبحاث التعاقدية"}, "t65": {"en": "LABORATORIES", "ar": "المختبرات"}, "t66": {"en": "HOSPITALS", "ar": "المستشفيات"}, "t67": {"en": "INDUSTRY", "ar": "القطاع الصناعي"}, "t68": {"en": "R&amp;D TEAMS", "ar": "فرق البحث والتطوير"}, "t69": {"en": "Scientific consultancy services", "ar": "خدمات الاستشارات العلمية"}, "t70": {"en": "12 connected divisions for end-to-end research support.", "ar": "12 قسماً مترابطاً لدعم البحث العلمي من البداية إلى النهاية."}, "t71": {"en": "Each division can operate independently or as part of a complete research-development engagement.", "ar": "يمكن لكل قسم العمل بشكل مستقل أو ضمن مشروع متكامل للبحث والتطوير."}, "t72": {"en": "Discuss your project", "ar": "ناقش مشروعك"}, "t73": {"en": "Research Development", "ar": "تطوير الأبحاث"}, "t74": {"en": "Scientific concepts, research questions, hypotheses, study design and research protocols.", "ar": "تطوير المفاهيم العلمية، والأسئلة البحثية، والفرضيات، وتصميم الدراسات، والبروتوكولات البحثية."}, "t75": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t76": {"en": "Research Project Management", "ar": "إدارة المشاريع البحثية"}, "t77": {"en": "Project planning, milestones, research coordination, documentation and collaborator management.", "ar": "تخطيط المشاريع، والمراحل الرئيسية، وتنسيق البحث، والتوثيق، وإدارة المتعاونين."}, "t78": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t79": {"en": "R&amp;D Consultancy", "ar": "استشارات البحث والتطوير"}, "t80": {"en": "Life sciences, food science, nutrition, biotechnology, agrifood and related R&amp;D advisory.", "ar": "استشارات البحث والتطوير في علوم الحياة، وعلوم الأغذية، والتغذية، والتقنية الحيوية، والنظم الزراعية والغذائية."}, "t81": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t82": {"en": "Laboratory Coordination", "ar": "تنسيق المختبرات"}, "t83": {"en": "Selection and coordination of universities, CROs and analytical laboratories without operating a wet lab initially.", "ar": "اختيار وتنسيق الجامعات، وشركات الأبحاث التعاقدية، والمختبرات التحليلية دون تشغيل مختبر رطب خاص بالشركة في المرحلة الأولى."}, "t84": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t85": {"en": "Statistical analysis, visualization, scientific interpretation and research analytics.", "ar": "التحليل الإحصائي، وتصور البيانات، والتفسير العلمي، وتحليلات البحث."}, "t86": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t87": {"en": "Bioinformatics", "ar": "المعلوماتية الحيوية"}, "t88": {"en": "Genomics, microbiome, metabolomics and biological-data analysis where permitted.", "ar": "تحليل بيانات الجينوم، والميكروبيوم، والميتابولومكس، والبيانات البيولوجية حيثما تسمح الأنظمة."}, "t89": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t90": {"en": "Cheminformatics", "ar": "المعلوماتية الكيميائية"}, "t91": {"en": "Molecular-property analysis, compound annotation, ADMET and computational scientific analysis.", "ar": "تحليل الخصائص الجزيئية، وتوصيف المركبات، وADMET، والتحليل العلمي الحاسوبي."}, "t92": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t93": {"en": "Scientific Documentation", "ar": "التوثيق العلمي"}, "t94": {"en": "Technical reports, research reports, SOPs, protocols and structured scientific documentation.", "ar": "التقارير الفنية والبحثية، وإجراءات التشغيل القياسية، والبروتوكولات، والتوثيق العلمي المنظم."}, "t95": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t96": {"en": "Publication Consultancy", "ar": "استشارات النشر العلمي"}, "t97": {"en": "Manuscript development, journal selection, editing, submission coordination and revision support.", "ar": "تطوير المخطوطات، واختيار المجلات، والتحرير، وتنسيق التقديم، ودعم المراجعات."}, "t98": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t99": {"en": "Scientific Communication", "ar": "التواصل العلمي"}, "t100": {"en": "Graphical abstracts, scientific figures, posters, presentations and technical communication.", "ar": "الملخصات الرسومية، والأشكال العلمية، والملصقات، والعروض التقديمية، والتواصل التقني."}, "t101": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t102": {"en": "Product R&amp;D Consultancy", "ar": "استشارات تطوير المنتجات"}, "t103": {"en": "Functional foods, nutraceutical concepts, ingredient strategy and formulation-development planning.", "ar": "الأغذية الوظيفية، ومفاهيم المكملات الغذائية، واستراتيجية المكونات، وتخطيط تطوير التركيبات."}, "t104": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t105": {"en": "Innovation Consultancy", "ar": "استشارات الابتكار"}, "t106": {"en": "Technology assessment, research commercialization, scientific innovation and translation.", "ar": "تقييم التقنيات، وتسويق الأبحاث، والابتكار العلمي، وتحويل النتائج إلى تطبيقات."}, "t107": {"en": "Learn more →", "ar": "اعرف المزيد ←"}, "t108": {"en": "Scientific collaboration platform", "ar": "منصة التعاون العلمي"}, "t109": {"en": "From research question to a connected R&amp;D workflow.", "ar": "من السؤال البحثي إلى مسار مترابط للبحث والتطوير."}, "t110": {"en": "Instead of treating consultancy, laboratory work, analytics and publication as isolated services, the model connects them through one coordinated scientific pipeline.", "ar": "بدلاً من التعامل مع الاستشارات، والعمل المخبري، والتحليلات، والنشر كخدمات منفصلة، يربط هذا النموذج بينها ضمن مسار علمي منسق واحد."}, "t111": {"en": "<b>Research Design</b><span>Concepts, protocols, hypotheses</span>", "ar": "<b>تصميم البحث</b><span>المفاهيم، والبروتوكولات، والفرضيات</span>"}, "t112": {"en": "<b>Project Coordination</b><span>Milestones, CROs, collaborators</span>", "ar": "<b>تنسيق المشروع</b><span>المراحل الرئيسية، وشركات الأبحاث، والمتعاونون</span>"}, "t113": {"en": "<b>Laboratory Execution</b><span>Partner facilities and specialist testing</span>", "ar": "<b>التنفيذ المخبري</b><span>مرافق الشركاء والاختبارات المتخصصة</span>"}, "t114": {"en": "<b>Y-Analytics</b><span>Statistics, integration, visualization</span>", "ar": "<b>Y-Analytics</b><span>الإحصاء، والتكامل، وتصور البيانات</span>"}, "t115": {"en": "<b>Publication</b><span>Manuscript, journal, revision</span>", "ar": "<b>النشر العلمي</b><span>المخطوطة، والمجلة، والمراجعة</span>"}, "t116": {"en": "<b>Translation</b><span>Products, IP, commercialization</span>", "ar": "<b>الترجمة التطبيقية</b><span>المنتجات، والملكية الفكرية، والتسويق التجاري</span>"}, "t117": {"en": "<strong>Dr. Mushawa<br/>Scientific Consultancy</strong>", "ar": "<strong>د. مشاوة<br/>الاستشارات العلمية</strong>"}, "t118": {"en": "<b>Client / PI</b><span>Research challenge</span>", "ar": "<b>العميل / الباحث الرئيسي</b><span>التحدي البحثي</span>"}, "t119": {"en": "<b>University</b><span>Expertise + facilities</span>", "ar": "<b>الجامعة</b><span>الخبرات + المرافق</span>"}, "t120": {"en": "<b>CRO / Lab</b><span>Specialist execution</span>", "ar": "<b>شركة أبحاث / مختبر</b><span>تنفيذ متخصص</span>"}, "t121": {"en": "<b>Industry</b><span>Translation + products</span>", "ar": "<b>القطاع الصناعي</b><span>تطبيق + منتجات</span>"}, "t122": {"en": "<b>Scientific Data</b><span>Analytics + evidence</span>", "ar": "<b>البيانات العلمية</b><span>التحليلات + الأدلة</span>"}, "t123": {"en": "<b>Publication / IP</b><span>Scientific output</span>", "ar": "<b>النشر / الملكية الفكرية</b><span>المخرج العلمي</span>"}, "t124": {"en": "Solutions by scientific domain", "ar": "حلول حسب المجال العلمي"}, "t125": {"en": "Bring the right expertise around each research challenge.", "ar": "اجمع الخبرات المناسبة حول كل تحدٍ بحثي."}, "t126": {"en": "Choose a scientific domain, then combine only the consultancy divisions required for the project.", "ar": "اختر المجال العلمي، ثم اجمع فقط الأقسام الاستشارية اللازمة للمشروع."}, "t127": {"en": "Food &amp; Nutrition", "ar": "الغذاء والتغذية"}, "t128": {"en": "Microbiome &amp; Omics", "ar": "الميكروبيوم وعلوم الأوميكس"}, "t129": {"en": "Analytical Chemistry", "ar": "الكيمياء التحليلية"}, "t130": {"en": "Product R&amp;D", "ar": "تطوير المنتجات"}, "t131": {"en": "Food science &amp; nutrition", "ar": "علوم الأغذية والتغذية"}, "t132": {"en": "Research from food composition to human nutrition outcomes.", "ar": "أبحاث تمتد من تركيب الغذاء إلى نتائج التغذية البشرية."}, "t133": {"en": "Support for food processing research, functional foods, dietary intervention, personalized nutrition, nutrition analytics, manuscript development and translational product concepts.", "ar": "دعم أبحاث تصنيع الأغذية، والأغذية الوظيفية، والتدخلات الغذائية، والتغذية الشخصية، وتحليلات التغذية، وتطوير المخطوطات، ومفاهيم المنتجات التطبيقية."}, "t134": {"en": "Discuss this solution", "ar": "ناقش هذا الحل"}, "t135": {"en": "Project examples", "ar": "أمثلة المشاريع"}, "t136": {"en": "Designed for researchers, institutions and R&amp;D teams.", "ar": "مصممة للباحثين والمؤسسات وفرق البحث والتطوير."}, "t137": {"en": "Research development", "ar": "تطوير الأبحاث"}, "t138": {"en": "From concept to executable research protocol", "ar": "من الفكرة إلى بروتوكول بحث قابل للتنفيذ"}, "t139": {"en": "Structure the question, endpoints, methods, collaborators, milestones and scientific documentation before execution begins.", "ar": "هيكلة السؤال البحثي، ونقاط القياس، والمنهجيات، والمتعاونين، والمراحل الرئيسية، والتوثيق العلمي قبل بدء التنفيذ."}, "t140": {"en": "<b>Explore workflow</b>", "ar": "<b>استكشف سير العمل</b>"}, "t141": {"en": "Data intelligence", "ar": "ذكاء البيانات"}, "t142": {"en": "Turn complex scientific datasets into decisions", "ar": "حوّل البيانات العلمية المعقدة إلى قرارات"}, "t143": {"en": "Integrate statistics, visualization, bioinformatics and scientific interpretation into one analysis workflow.", "ar": "ادمج الإحصاء، وتصور البيانات، والمعلوماتية الحيوية، والتفسير العلمي ضمن مسار تحليلي واحد."}, "t144": {"en": "<b>Explore analytics</b>", "ar": "<b>استكشف التحليلات</b>"}, "t145": {"en": "Research translation", "ar": "الترجمة البحثية"}, "t146": {"en": "Move from evidence to publication or product strategy", "ar": "انتقل من الدليل إلى النشر أو استراتيجية المنتج"}, "t147": {"en": "Convert project outcomes into manuscripts, scientific communication, innovation plans and product-development pathways.", "ar": "حوّل نتائج المشروع إلى مخطوطات علمية، وتواصل علمي، وخطط ابتكار، ومسارات لتطوير المنتجات."}, "t148": {"en": "<b>Explore translation</b>", "ar": "<b>استكشف الترجمة التطبيقية</b>"}, "t149": {"en": "Why Dr. Mushawa Scientific Consultancy?", "ar": "لماذا د. مشاوة للاستشارات العلمية؟"}, "t150": {"en": "Scientific depth with a flexible partner-network model.", "ar": "عمق علمي مع نموذج مرن قائم على شبكة من الشركاء."}, "t151": {"en": "Built around research workflows", "ar": "مبنية حول سير العمل البحثي"}, "t152": {"en": "Services are organized around how science actually moves: design, execution, analysis, interpretation, communication and translation.", "ar": "تنظم الخدمات وفق الحركة الفعلية للبحث العلمي: التصميم، والتنفيذ، والتحليل، والتفسير، والتواصل، والترجمة التطبيقية."}, "t153": {"en": "Asset-light and scalable", "ar": "خفيفة الأصول وقابلة للتوسع"}, "t154": {"en": "Specialist experimental work can be assigned to appropriate universities, CROs and analytical laboratories instead of building every facility at launch.", "ar": "يمكن إسناد الأعمال التجريبية المتخصصة إلى الجامعات، وشركات الأبحاث التعاقدية، والمختبرات التحليلية المناسبة بدلاً من إنشاء جميع المرافق عند الانطلاق."}, "t155": {"en": "Multidisciplinary analytics", "ar": "تحليلات متعددة التخصصات"}, "t156": {"en": "Combine biostatistics, bioinformatics, cheminformatics, visualization and domain interpretation within the same research engagement.", "ar": "دمج الإحصاء الحيوي، والمعلوماتية الحيوية، والمعلوماتية الكيميائية، وتصور البيانات، والتفسير التخصصي ضمن المشروع البحثي نفسه."}, "t157": {"en": "Saudi + international collaboration", "ar": "تعاون سعودي + دولي"}, "t158": {"en": "Build a local scientific consultancy hub while connecting clients to external expertise and specialized research execution when required.", "ar": "بناء مركز استشارات علمية محلي مع ربط العملاء بالخبرات الخارجية والتنفيذ البحثي المتخصص عند الحاجة."}, "t159": {"en": "Consultancy proof framework", "ar": "إطار القيمة الاستشارية"}, "t160": {"en": "What the model is designed to deliver.", "ar": "ما الذي صُمم هذا النموذج لتقديمه."}, "t161": {"en": "Structured research", "ar": "بحث منظم"}, "t162": {"en": "Clear questions, protocols, milestones, documentation and accountability.", "ar": "أسئلة واضحة، وبروتوكولات، ومراحل رئيسية، وتوثيق، ومسؤولية."}, "t163": {"en": "Connected execution", "ar": "تنفيذ مترابط"}, "t164": {"en": "Coordinate clients, collaborators, laboratories, CROs and specialist experts.", "ar": "تنسيق العملاء، والمتعاونين، والمختبرات، وشركات الأبحاث التعاقدية، والخبراء المتخصصين."}, "t165": {"en": "Decision-ready data", "ar": "بيانات جاهزة لاتخاذ القرار"}, "t166": {"en": "Move beyond raw data toward interpretable, visual and scientifically grounded results.", "ar": "الانتقال من البيانات الخام إلى نتائج قابلة للتفسير والتصور ومستندة إلى أساس علمي."}, "t167": {"en": "Translatable outputs", "ar": "مخرجات قابلة للتطبيق"}, "t168": {"en": "Publications, technical reports, product concepts and innovation pathways.", "ar": "منشورات علمية، وتقارير فنية، ومفاهيم منتجات، ومسارات للابتكار."}, "t169": {"en": "Ready for the next step?", "ar": "هل أنت مستعد للخطوة التالية؟"}, "t170": {"en": "Start with the research challenge—not a fixed service package.", "ar": "ابدأ بالتحدي البحثي — وليس بحزمة خدمات ثابتة."}, "t171": {"en": "We can map the problem, identify the required divisions, define the external laboratory or CRO needs, and create a complete research-development pathway.", "ar": "يمكننا تحليل المشكلة، وتحديد الأقسام المطلوبة، وتحديد احتياجات المختبر الخارجي أو شركة الأبحاث التعاقدية، وبناء مسار متكامل للبحث والتطوير."}, "t172": {"en": "Discuss a project", "ar": "ناقش مشروعاً"}, "t173": {"en": "For researchers or organizations with a defined research question, dataset or study.", "ar": "للباحثين أو المؤسسات التي لديها سؤال بحثي أو مجموعة بيانات أو دراسة محددة."}, "t174": {"en": "Request consultation", "ar": "اطلب استشارة"}, "t175": {"en": "Build a collaboration", "ar": "ابنِ تعاوناً"}, "t176": {"en": "For universities, laboratories, CROs or scientific experts interested in becoming execution partners.", "ar": "للجامعات والمختبرات وشركات الأبحاث التعاقدية والخبراء العلميين الراغبين في أن يصبحوا شركاء تنفيذ."}, "t177": {"en": "Partner with us", "ar": "كن شريكاً معنا"}, "t178": {"en": "Develop the Saudi company", "ar": "طوّر الشركة السعودية"}, "t179": {"en": "For strategic discussion on activity scope, operating model, partner roles and initial pilot projects.", "ar": "لنقاش استراتيجي حول نطاق الأنشطة، ونموذج التشغيل، وأدوار الشركاء، والمشاريع التجريبية الأولية."}, "t180": {"en": "Saudi partnership", "ar": "الشراكة السعودية"}, "t181": {"en": "Dr. Mushawa Scientific Consultancy", "ar": "د. مشاوة للاستشارات العلمية"}, "t182": {"en": "SAUDI ARABIA • RESEARCH &amp; INNOVATION", "ar": "المملكة العربية السعودية • البحث والابتكار"}, "t183": {"en": "Scientific consultancy for research development, project management, laboratory coordination, analytics, publication and innovation.", "ar": "استشارات علمية لتطوير الأبحاث، وإدارة المشاريع، وتنسيق المختبرات، والتحليلات، والنشر، والابتكار."}, "t184": {"en": "Services", "ar": "الخدمات"}, "t185": {"en": "Research Development", "ar": "تطوير الأبحاث"}, "t186": {"en": "Project Management", "ar": "إدارة المشاريع"}, "t187": {"en": "Publication", "ar": "النشر العلمي"}, "t188": {"en": "Advanced", "ar": "خدمات متقدمة"}, "t189": {"en": "Bioinformatics", "ar": "المعلوماتية الحيوية"}, "t190": {"en": "Cheminformatics", "ar": "المعلوماتية الكيميائية"}, "t191": {"en": "Product R&amp;D", "ar": "تطوير المنتجات"}, "t192": {"en": "Innovation", "ar": "الابتكار"}, "t193": {"en": "Solutions", "ar": "الحلول"}, "t194": {"en": "Food &amp; Nutrition", "ar": "الغذاء والتغذية"}, "t195": {"en": "Microbiome &amp; Omics", "ar": "الميكروبيوم وعلوم الأوميكس"}, "t196": {"en": "Analytical Chemistry", "ar": "الكيمياء التحليلية"}, "t197": {"en": "Nutraceutical R&amp;D", "ar": "البحث والتطوير للمكملات الغذائية"}, "t198": {"en": "Company", "ar": "الشركة"}, "t199": {"en": "Platform", "ar": "المنصة"}, "t200": {"en": "Partners", "ar": "الشركاء"}, "t201": {"en": "Why Us", "ar": "لماذا نحن"}, "t202": {"en": "Contact", "ar": "تواصل معنا"}, "t203": {"en": "\n<span>© 2026 Dr. Mushawa Scientific Consultancy Company. Prototype website.</span>\n<span>Research • Analytics • Collaboration • Innovation</span>\n", "ar": "\n<span>© 2026 شركة د. مشاوة للاستشارات العلمية. نموذج أولي للموقع.</span>\n<span>البحث • التحليلات • التعاون • الابتكار</span>\n"}};
+const DMS_SOLUTIONS = [{"en": {"eyebrow": "Food science & nutrition", "title": "Research from food composition to human nutrition outcomes.", "text": "Support for food processing research, functional foods, dietary intervention, personalized nutrition, nutrition analytics, manuscript development and translational product concepts."}, "ar": {"eyebrow": "علوم الأغذية والتغذية", "title": "أبحاث تمتد من تركيب الغذاء إلى نتائج التغذية البشرية.", "text": "دعم أبحاث تصنيع الأغذية، والأغذية الوظيفية، والتدخلات الغذائية، والتغذية الشخصية، وتحليلات التغذية، وتطوير المخطوطات، ومفاهيم المنتجات التطبيقية."}}, {"en": {"eyebrow": "Microbiome & omics", "title": "Connect biological datasets with interpretable research questions.", "text": "Support for microbiome, genomics and metabolomics projects including study design, data-analysis strategy, bioinformatics, integration, interpretation, visualization and publication."}, "ar": {"eyebrow": "الميكروبيوم وعلوم الأوميكس", "title": "اربط مجموعات البيانات البيولوجية بأسئلة بحثية قابلة للتفسير.", "text": "دعم مشاريع الميكروبيوم والجينوم والميتابولومكس، بما يشمل تصميم الدراسة، واستراتيجية تحليل البيانات، والمعلوماتية الحيوية، والتكامل، والتفسير، والتصور، والنشر."}}, {"en": {"eyebrow": "Analytical chemistry", "title": "Coordinate advanced analytical workflows from sample to interpretation.", "text": "Support for LC-MS, LC-QTOF, GC-MS, HPLC and related analytical projects through method planning, partner laboratory coordination, compound annotation, cheminformatics and scientific reporting."}, "ar": {"eyebrow": "الكيمياء التحليلية", "title": "نسّق مسارات التحليل المتقدمة من العينة إلى التفسير.", "text": "دعم مشاريع LC-MS وLC-QTOF وGC-MS وHPLC والتحاليل ذات الصلة عبر تخطيط المنهجية، وتنسيق المختبرات الشريكة، وتوصيف المركبات، والمعلوماتية الكيميائية، وإعداد التقارير العلمية."}}, {"en": {"eyebrow": "Product R&D", "title": "Translate evidence into structured product-development decisions.", "text": "Scientific advisory for functional foods, nutraceutical concepts, ingredient selection, formulation-development planning, validation strategy, scientific documentation and commercialization pathways."}, "ar": {"eyebrow": "تطوير المنتجات", "title": "حوّل الأدلة إلى قرارات منظمة لتطوير المنتجات.", "text": "استشارات علمية للأغذية الوظيفية، ومفاهيم المكملات الغذائية، واختيار المكونات، وتخطيط تطوير التركيبات، واستراتيجية التحقق، والتوثيق العلمي، ومسارات التسويق التجاري."}}];
+let DMS_LANG = 'en';
+let DMS_ACTIVE_SOLUTION = 0;
+
+function dmsRenderSolution(index, btn=null){
+  DMS_ACTIVE_SOLUTION = index;
+  if(btn){
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  const d = DMS_SOLUTIONS[index][DMS_LANG];
+  const e = document.getElementById('solEyebrow');
+  const t = document.getElementById('solTitle');
+  const x = document.getElementById('solText');
+  if(e) e.textContent = d.eyebrow;
+  if(t) t.textContent = d.title;
+  if(x) x.textContent = d.text;
+}
+
+window.showSolution = function(i, btn){
+  dmsRenderSolution(i, btn);
+};
+
+function dmsSetLanguage(lang, remember=true){
+  DMS_LANG = lang === 'ar' ? 'ar' : 'en';
+  const rtl = DMS_LANG === 'ar';
+
+  document.documentElement.lang = DMS_LANG;
+  document.documentElement.dir = rtl ? 'rtl' : 'ltr';
+  document.title = rtl
+    ? 'شركة د. مشاوة للاستشارات العلمية | المملكة العربية السعودية'
+    : 'Dr. Mushawa Scientific Consultancy | Saudi Arabia';
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const item = DMS_TRANSLATIONS[key];
+    if(item && item[DMS_LANG] !== undefined){
+      el.innerHTML = item[DMS_LANG];
+    }
+  });
+
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    const active = btn.dataset.lang === DMS_LANG;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+
+  dmsRenderSolution(DMS_ACTIVE_SOLUTION);
+
+  if(remember){
+    try{ localStorage.setItem('dms-language', DMS_LANG); }catch(e){}
+  }
+}
+
+document.querySelectorAll('.lang-option').forEach(btn => {
+  btn.addEventListener('click', () => dmsSetLanguage(btn.dataset.lang));
+});
+
+// Override menu function to keep aria state correct.
+window.toggleNav = function(){
+  const nav = document.getElementById('mainNav');
+  const btn = document.querySelector('.menu-btn');
+  const open = nav.classList.toggle('mobile');
+  if(btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+document.querySelectorAll('#mainNav a').forEach(a => {
+  a.addEventListener('click', () => {
+    if(window.innerWidth <= 1210){
+      document.getElementById('mainNav').classList.remove('mobile');
+      const btn = document.querySelector('.menu-btn');
+      if(btn) btn.setAttribute('aria-expanded','false');
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  let preferred = 'en';
+  try{ preferred = localStorage.getItem('dms-language') || 'en'; }catch(e){}
+  dmsSetLanguage(preferred, false);
+});
+</script></body>
+</html>
